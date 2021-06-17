@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="static/css/responsive-table.css">
+    <link rel="stylesheet" href="static/css/base_logged.css">
+    <link rel="stylesheet" href="static/css/carrito.css">
+
+</head>
+
+<body>
+    {% extends 'base_logged.html' %}
+    {% block content %}
+    <div class="container">
+        <div class="left">
+
+            {% if not data: %}
+            {% if ped_s: %}
+            <h3 class="text">PEDIDO REALIZADO CON EXITO!</h3>
+            {% endif %}
+            <h3 class="text">Productos en su carrito... parece que no hay nada.</h3>
+            <div class="center-div">
+                <img src="static/images/empty_cart.png" width="320" class="img-responsive image-cart">
+            </div>
+            {% endif %}
+
+            {% if data: %}
+            <table>
+                <caption>Productos en su carrito</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Codigo de Producto</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dato in data: %}
+                    <tr>
+                        <td data-label="Codigo de producto">{{ dato[0] }}</td>
+                        <td data-label="Nombre">{{ dato[1] }}</td>
+                        <td data-label="Material">{{ dato[2] }}</td>
+                        <td data-label="Precio">{{ dato[5] }}</td>
+                        <td data-label="Acciones"><a href="/quitar_prodid={{ dato[0] }}">Quitar</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+        <div class="right">
+            <div class="float-right">
+                <h3 class="text">Total productos: {{ cprod }} </h3>
+                <h3 class="text">Monto a pagar: {{ totp }} </h3>
+                <div class="center-div">
+                    <a class="btn btn-success" href="/realizarpago={{ tidped }}">PAGAR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        {% include 'footer.html' %}
+    </footer>
+    {% endblock %}
+</body>
+
+
+</html>

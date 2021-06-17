@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Realizar Pago</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="static/css/base_logged.css">
+    <link rel="stylesheet" href="static/css/carrito.css">
+</head>
+
+<body>
+    {% extends 'base_logged.html' %}
+    {% block content %}
+    <!-- CREDIT CARD FORM STARTS HERE -->
+
+
+    <section class="user">
+        <div class="user_options-container">
+            <div class="user_options-text">
+                <div class="user_options-unregistered">
+                    <div class="user_unregistered-title">
+                        <img src="static/images/cardtmp.jpg.png" width="380" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+            <div class="user_options-forms" id="user_options-forms">
+                <div class="user_forms-login">
+                    <h2 class="forms_title">Datos de pago</h2>
+                    <form class="forms_form" action="#" method="POST">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="Numero de tarjeta" class="forms_field-input" required
+                                    autofocus />
+
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" placeholder="CCI" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" name="direccionfact" placeholder="Direccion de facturacion" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="month" id="start" name="start" min="2018-03" value="2018-05"
+                                    class="forms_field-input" required />
+                            </div>
+
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <button type="button" class="forms_buttons-forgot"></button>
+                            <input type="submit" value="PAGAR" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CREDIT CARD FORM ENDS HERE -->
+
+    <script src="static/js/payment.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js'></script>
+    {% endblock %}
+</body>
+
+</html>

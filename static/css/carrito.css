@@ -1,0 +1,38 @@
+.right {
+    float: right;
+    width: 400px;
+    border: 3px solid #dbdbdb;
+    padding: 10px;
+}
+.right2 {
+    float: right;
+    width: 700px;
+    border: 3px solid #dbdbdb;
+    padding: 10px;
+}
+.left2 {
+    float: left;
+    width: 400px;
+    border: 3px solid #dbdbdb;
+    padding: 10px;
+}
+.left {
+    float: left;
+    width: 730px;
+    border: 3px solid #dbdbdb;
+    padding: 10px;
+}
+
+.image-cart {
+    padding: 10px;
+    opacity: 50%;
+}
+
+.center-div {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+.text {
+    text-align: center;
+}

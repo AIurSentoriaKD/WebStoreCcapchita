@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina Principal</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="static/css/product_bar.css">
+    <link rel="stylesheet" href="static/css/category_bar.css">
+
+</head>
+
+<body>
+    {% extends 'base_logged.html' %}
+    {% block content %}
+    <header>
+        <div class="container-sm">
+            <img src="{{url_for('static', filename='3.png')}}" width="1920" class="img-responsive">
+
+        </div>
+
+    </header>
+    <div class="subbar">
+
+    </div>
+    <div class="container-wim">
+        <img src="static/images/wallp_register.jpg" class="image2" style="width:100%;">
+        <div class="centered">
+            <div class="centered container-color-my">
+                <h1>Bienvenido a nuestra tienda, comienza a explorar nuestros productos o registrese para comprar.</h1>
+            </div>
+            
+        </div>
+    </div>
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+    {% endblock %}
+</body>
+
+
+</html>

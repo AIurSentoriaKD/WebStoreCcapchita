@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registro - Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+  <link href=" {{url_for('static',filename='css/login_register.css')}} " rel="stylesheet">
+  
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  {% extends 'base.html' %}
+  {% block content %}
+
+  <section class="user">
+    <div class="user_options-container">
+      <div class="user_options-text">
+        <div class="user_options-unregistered">
+          <h2 class="user_unregistered-title">¿No tiene una cuenta?</h2>
+          <p class="user_unregistered-text">¡Registrese para obtener beneficios!</p>
+          <button class="user_unregistered-signup" id="signup-button">Rrgistrarse</button>
+        </div>
+
+        <div class="user_options-registered">
+          <h2 class="user_registered-title">¿Ya tiene una cuenta?</h2>
+          <p class="user_registered-text">Inicie sesión y descubra los productos que ofrecemos.</p>
+          <button class="user_registered-login" id="login-button">Acceder</button>
+        </div>
+      </div>
+
+      <div class="user_options-forms" id="user_options-forms">
+        <div class="user_forms-login">
+          <h2 class="forms_title">Iniciar Sesión</h2>
+
+          <form class="forms_form" action="#" method="POST">
+            <fieldset class="forms_fieldset">
+              <div class="forms_field">
+                <input type="email" name="emaillog" placeholder="Correo Electronico" class="forms_field-input" required autofocus />
+              </div>
+              <div class="forms_field">
+                <input type="password" name="passlog" placeholder="Contraseña" class="forms_field-input" required />
+              </div>
+            </fieldset>
+            <div class="forms_buttons">
+              <button type="button" class="forms_buttons-forgot">¿Olvidó su contraseña?</button>
+              <input type="submit" value="Acceder" class="forms_buttons-action">
+            </div>
+          </form>
+        </div>
+        <div class="user_forms-signup">
+          <h2 class="forms_title">Registro</h2>
+
+          <form class="forms_form" action="#" method="POST">
+            <fieldset class="forms_fieldset">
+              <div class="forms_field">
+                <input type="email" name="emailreg" placeholder="Correo Electronico" class="forms_field-input"
+                  required />
+              </div>
+              <div class="forms_field">
+                <input type="password" name="passreg" placeholder="Contraseña" class="forms_field-input" required />
+              </div>
+            </fieldset>
+            <div class="forms_buttons">
+              <input type="submit" value="Registrarse" class="forms_buttons-action">
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- partial -->
+  
+  <script src="static/js/login_register.js"></script>
+  {% endblock %}
+</body>
+<footer>
+  
+</footer>
+</html>

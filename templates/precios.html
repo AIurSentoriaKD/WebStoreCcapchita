@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catalogo</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="static/css/product_bar.css">
+    <link rel="stylesheet" href="static/css/category_bar.css">
+
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+
+    {% block content %}
+    <header>
+        <div class="container-sm">
+            <img src="{{url_for('static', filename='1.png')}}" width="1920" class="img-responsive">
+        </div>
+    </header>
+    <div class="background-all">
+        <div>
+            <section class="hero-section">
+                <div class="card-grid">
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Accesorios</p>
+                            <h3 class="card__heading">Infaltables que cualquier oficial necesita</h3>
+                        </div>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Prendas Inferiores</p>
+                            <h3 class="card__heading">Pantalones con estilo</h3>
+                        </div>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Trajes y chaquetas</p>
+                            <h3 class="card__heading">Protejase con estos habitamentos</h3>
+                        </div>
+                        </li>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card__background"
+                            style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
+                        </div>
+                        <div class="card__content">
+                            <p class="card__category">Camisas y calzados</p>
+                            <h3 class="card__heading">Formal y eficiente</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="container">
+            <div class="well well-sm">
+                <strong>Vista</strong>
+                <div class="btn-group">
+                    <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                        </span>Lista</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                            class="glyphicon glyphicon-th"></span>Parrilla</a>
+                </div>
+            </div>
+            <div id="products" class="row list-group">
+                {% for x in data: %}
+                <div class="item  col-xs-4 col-lg-4">
+                    <div class="thumbnail">
+                        <img class="group list-group-image" src="static/images/{{x[0]}}.png" alt="" />
+                        <div class="caption">
+
+                            <h4 class="group inner list-group-item-heading">
+                                {{ x[1] }}</h4>
+
+                            <p class="group inner list-group-item-text">
+                                {{ x[2] }}</p>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead">
+                                        S/{{ x[5] }}</p>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                    <a class="btn btn-success" href="/product_id={{ x[0] }}">Ver producto</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script src="static/js/product_bar.js"></script>
+    {% endblock %}
+</body>
+
+</html>

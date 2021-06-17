@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ data[1] }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="static/css/product_bar.css">
+
+</head>
+
+<body>
+    {% extends 'base_logged.html' %}
+
+    {% block content %}
+    <header>
+        <div class="container-sm">
+            <img src="{{url_for('static', filename='2.png')}}" width="1920" class="img-responsive">
+        </div>
+    </header>
+    <div class="container">
+        <div>   
+            {% for x in data: %}
+            <h1>{{ x }}</h1>
+            {% endfor %}
+            <div class="col-xs-12 col-md-6">
+                <a class="btn btn-success" href="/product_id={{ data[0] }}:add">Agregar al carrito</a>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/product_bar.js"></script>
+    {% endblock %}
+
+</body>
+
+</html>
