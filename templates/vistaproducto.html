@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
     <link rel="stylesheet" href="static/css/product_bar.css">
+    <link rel="stylesheet" href="static/css/carrito.css">
 
 </head>
 
@@ -21,12 +22,19 @@
         </div>
     </header>
     <div class="container">
-        <div>   
-            {% for x in data: %}
-            <h1>{{ x }}</h1>
-            {% endfor %}
-            <div class="col-xs-12 col-md-6">
-                <a class="btn btn-success" href="/login_register">Agregar al carrito</a>
+        <div class="left">
+            <img src="static/images/{{data[0]}}.png" width="600" class="img-responsive">
+        </div>
+        <div class="right">
+            <h2>PRODUCTO: {{ data[1] }}</h2>
+            <h3>Descripcion: {{data[2]}} </h3>
+            <h3>Categoria: {{data[3]}} </h3>
+            <h4>Material: {{data[4]}} </h4>
+            <h5>Codigo de producto: {{data[0]}} </h5>
+            <div class="center">
+                <div class="col-xs-12 col-md-6">
+                    <a class="btn btn-success" href="/login_register">Agregar al carrito</a>
+                </div>
             </div>
         </div>
     </div>

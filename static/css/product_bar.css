@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.container-wim {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.container-color-my{
+    background-color: black;
+    width: 700px;
+    height: 80px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image2 {
+    filter: blur(6px);
+}

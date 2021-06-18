@@ -31,7 +31,11 @@ def login_usuario(email, password):
     if data:
         global LoginInfo
         LoginInfo = data
+        print("LOGIN AUTORIZADO: ")
+        print("==================")
         print(LoginInfo)
+        print("==================")
+
         return LoginInfo
     else:
         return None
